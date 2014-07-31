@@ -1,0 +1,15 @@
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+
+<div class="row">
+	<% @products.each do |product| %>
+		<div class="col-md-3">
+			<%= product.code %>
+			<%= product.name %>
+			<%= product.description %>
+			<%= product.volume %>
+			<%= product.mk_price %>
+			<%= product.sp_price %>
+		</div>
+	<% end %>
+</div>

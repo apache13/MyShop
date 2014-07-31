@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731145015) do
+ActiveRecord::Schema.define(version: 20140731175528) do
 
   create_table "intervals", force: true do |t|
     t.string   "detail"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140731145015) do
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
     t.integer  "quantity"
-    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "order_id"
@@ -30,7 +29,6 @@ ActiveRecord::Schema.define(version: 20140731145015) do
 
   create_table "orders", force: true do |t|
     t.string   "customer"
-    t.decimal  "total"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "interval_id"

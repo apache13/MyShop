@@ -5,6 +5,7 @@
     <tr>
       <th>Detail</th>
       <th>Orders</th>
+      <th>Quantity</th>
       <th>Summary</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= interval.detail %></td>
         <td><%= interval.orders.count %></td>
+        <td><%= interval.quantity %></td>
         <td><%= interval.summary %></td>
         <td><%= link_to 'Show', interval %></td>
         <td><%= link_to 'Edit', edit_interval_path(interval) %></td>

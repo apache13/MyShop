@@ -1,14 +1,12 @@
 class Order < ActiveRecord::Base
   
-  before_save :cal_total
-  
   has_many :line_items
   belongs_to :interval
   
-  private
-  def cal_total
-    self.total = 0 
-    line_items.each { |i| self.total += i.amount }
+  def total
+    total = 0 
+    line_items.each { |i| total += i.amount }
+    return total
   end
   
 end

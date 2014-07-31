@@ -9,4 +9,15 @@ class Interval < ActiveRecord::Base
      return sum
   end
 
+ def quantity
+     sum = 0
+     self.orders.each do |order|
+       order.line_items.each do |item|
+         sum += item.quantity
+       end
+     end
+     return sum
+  end
+
+
 end

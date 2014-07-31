@@ -10,6 +10,7 @@ class IntervalsController < ApplicationController
   # GET /intervals/1
   # GET /intervals/1.json
   def show
+    @items = LineItem.select('products.id as product_id , products.code , products.name , products.volume , products.sp_price, sum(line_items.quantity) as quantity').joins(:product).group('products.id , products.code , products.name , products.volume , products.sp_price ')
   end
 
   # GET /intervals/new

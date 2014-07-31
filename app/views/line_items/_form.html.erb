@@ -1,0 +1,33 @@
+<%= form_for(@line_item) do |f| %>
+  <% if @line_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@line_item.errors.count, "error") %> prohibited this line_item from being saved:</h2>
+
+      <ul>
+      <% @line_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.select :order_id ,  Order.all.collect {|o| [ o.interval.detail+' ('+o.customer+')' , o.id]} , :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.select :product_id ,  Product.all.collect {|p| [ p.code+' ('+p.name+' '+p.volume+' , '+p.sp_price.to_s+' บาท )' , p.id]} , :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

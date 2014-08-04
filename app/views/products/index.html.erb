@@ -3,6 +3,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Product ID.</th>
       <th>Code</th>
       <th>Name</th>
       <th>Description</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+      	<td><%= product.id %></td>
         <td><%= product.code %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>

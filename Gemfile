@@ -39,3 +39,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'bootstrap-sass', '~> 3.2.0.0'
+
+gem 'colorbox-rails', '~> 0.1.2'
+

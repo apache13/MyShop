@@ -4,7 +4,15 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
-    @line_items = LineItem.all
+    conditions = {}
+    conditions[:interval_id] = params[:interval_id] unless params[:interval_id].blank?
+    conditions[:customer] = params[:customer] unless params[:customer].blank?
+
+    @line_items = LineItem.joins(:order).where(orders: conditions)
+
+    
+    
+    #@line_items = LineItem.all
   end
 
   # GET /line_items/1

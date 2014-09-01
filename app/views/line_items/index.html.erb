@@ -1,15 +1,12 @@
 <h1>Listing line_items</h1>
-
+<%= render "line_items/search" %>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Order ID.</th>
+      <th>Interval</th>
       <th>Customer</th>
-      <th>Product ID.</th>
-      <th>Product Code</th>
-      <th>Product Name</th>
-      <th>Volume</th>
-      <th>SP Price</th>
+      <th>Product</th>
       <th>Quantity</th>
       <th>Amount</th>
       <th colspan="3"></th>
@@ -20,12 +17,9 @@
     <% @line_items.each do |line_item| %>
       <tr>
       	<td><%= line_item.order.id %></td>
+      	<td><%= line_item.order.interval.detail %></td>
       	<td><%= line_item.order.customer%></td>
-      	<td><%= line_item.product.id %></td>
-      	<td><%= line_item.product.code %></td>
-        <td><%= line_item.product.name %></td>
-        <td><%= line_item.product.volume %></td>
-        <td><%= line_item.product.sp_price %></td>
+      	<td><%= line_item.product.code+' ('+line_item.product.name+' '+line_item.product.volume+' , '+line_item.product.sp_price.to_s+' บาท )' %></td>
         <td><%= line_item.quantity %></td>
         <td><%= line_item.amount %></td>
         <td><%= link_to 'Show', line_item %></td>

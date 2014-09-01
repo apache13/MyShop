@@ -1,0 +1,21 @@
+<%= form_tag("/line_items", method: "get" , :role=>"form") do %>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag(:interval_id) %>
+			<%= select_tag(:interval_id , options_for_select(Interval.all.collect {|i| [ i.detail , i.id]}), :include_blank => true , :class=>"form-control") %>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag(:customer) %>
+			<%= text_field_tag :customer, nil , :class=>"form-control"%>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<%= submit_tag("Search" , :class=>"btn btn-default") %>
+	</div>
+</div>
+<% end %>

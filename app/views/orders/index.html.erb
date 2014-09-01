@@ -1,5 +1,5 @@
 <h1>Listing orders</h1>
-
+<%= render "orders/search" %>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -18,7 +18,7 @@
       	<td><%= order.interval.detail %></td>
       	<td><%= order.id %></td>
         <td><%= order.customer %></td>
-        <td><%= order.line_items.count %></td>
+        <td><%= order.quantity %></td>
         <td><%= order.total %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

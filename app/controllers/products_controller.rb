@@ -4,7 +4,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    
+    conditions = {}
+    conditions[:code] = params[:code] unless params[:code].blank?
+    @products = Product.where(conditions)
+    
+    
   end
 
   # GET /products/1

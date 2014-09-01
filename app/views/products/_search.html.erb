@@ -1,0 +1,15 @@
+<%= form_tag("/products", method: "get" , :role=>"form") do %>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag(:code) %>
+			<%= text_field_tag :code, nil , :class=>"form-control"%>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<%= submit_tag("Search" , :class=>"btn btn-default") %>
+	</div>
+</div>
+<% end %>

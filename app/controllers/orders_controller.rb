@@ -4,7 +4,10 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    conditions = {}
+    conditions[:interval_id] = params[:interval_id] unless params[:interval_id].blank?
+    @orders = Order.where(conditions)
+    
   end
 
   # GET /orders/1

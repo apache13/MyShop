@@ -1,12 +1,11 @@
 <h1>Listing products</h1>
-
+<%= render "products/search" %>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Product ID.</th>
       <th>Code</th>
       <th>Name</th>
-      <th>Description</th>
       <th>Volume</th>
       <th>Mk price</th>
       <th>Sp price</th>
@@ -20,7 +19,6 @@
       	<td><%= product.id %></td>
         <td><%= product.code %></td>
         <td><%= product.name %></td>
-        <td><%= product.description %></td>
         <td><%= product.volume %></td>
         <td><%= product.mk_price %></td>
         <td><%= product.sp_price %></td>

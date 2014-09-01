@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
 
   has_many :line_items
   belongs_to :interval
+  
   def total
     total = 0
     line_items.each { |i| total += i.amount }
@@ -16,4 +17,11 @@ class Order < ActiveRecord::Base
     return sum
   end
 
+  def fee
+    return (self.total*self.fee_rate)/100 
+  end
+  
+  def fee_rate
+    return 1.0
+  end
 end

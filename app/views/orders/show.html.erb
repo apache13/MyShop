@@ -43,7 +43,7 @@
 			<td><%= line_item.order.id %></td>
 			<td><%= line_item.product.id %></td>
 			<td><%= line_item.product.code %></td>
-			<td><%= line_item.product.name %></td>
+			<td><%= link_to line_item.product.name , line_item.product , :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '800px', :colorbox_iframe => true } %></td>
 			<td><%= line_item.product.volume %></td>
 			<td><%= line_item.product.sp_price %></td>
 			<td><%= line_item.quantity %></td>

@@ -21,7 +21,7 @@
       	<td><%= line_item.order.customer%></td>
       	<td><%= line_item.product.code+' ('+line_item.product.name+' '+line_item.product.volume+' , '+line_item.product.sp_price.to_s+' บาท )' %></td>
         <td><%= line_item.quantity %></td>
-        <td><%= line_item.amount %></td>
+        <td class="text-right"><%= number_format(line_item.amount) %></td>
         <td><%= link_to 'Show', line_item %></td>
         <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
         <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

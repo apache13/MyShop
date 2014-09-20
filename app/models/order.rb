@@ -22,6 +22,6 @@ class Order < ActiveRecord::Base
   end
   
   def fee_rate
-    return 1.0
+    return 1.5
   end
 end

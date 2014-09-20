@@ -20,8 +20,8 @@
         <td><%= product.code %></td>
         <td><%= product.name %></td>
         <td><%= product.volume %></td>
-        <td><%= product.mk_price %></td>
-        <td><%= product.sp_price %></td>
+        <td class="text-right"><%= number_format(product.mk_price) %></td>
+        <td class="text-right"><%= number_format(product.sp_price) %></td>
         <td>
         	<%= link_to 'Show' , product , :data => { :colorbox => true, :colorbox_height => '600px', :colorbox_width => '800px', :colorbox_iframe => true } %> 
         </td>
